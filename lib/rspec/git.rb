@@ -84,7 +84,7 @@ module RSpec
       end
 
       repos.each do |r|
-        system "cd #{r[:path]} && git remote add #{ENV['NAME']} #{r[:url]}"
+        system "cd #{r[:path]} && git remote add #{ENV['NAME']} #{ENV['REPO_PREFIX']}/#{File.basename(r[:url])}"
       end
     end
     
